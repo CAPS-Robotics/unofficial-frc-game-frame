@@ -4,10 +4,14 @@ package com.HiItsMe.unofficial_frc_game_frame.Buttons;
  * Created by William Herron on 5/20/2017.
  */
 public class Button {
-
-    public void onClick() {
-        trigger();
-    }
+    public int x;
+    public int y;
     public void trigger() {}
     public void draw() {}
+    public void checkClick(int cx, int cy) {
+        System.out.println("Button received click at (" + cx + ", " + cy + ")");
+        if(cx > x && cy > y && cx < x + 253 && cy < y + 99) {
+            trigger();
+        }
+    }
 }
