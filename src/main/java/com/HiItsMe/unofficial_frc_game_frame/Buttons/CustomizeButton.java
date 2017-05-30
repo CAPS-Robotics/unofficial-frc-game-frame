@@ -10,8 +10,6 @@ import java.io.File;
  * Created by William Herron on 5/20/2017.
  */
 public class CustomizeButton extends Button {
-    int x;
-    int y;
     BufferedImage img;
     public CustomizeButton(int X, int Y) {
         x = X;

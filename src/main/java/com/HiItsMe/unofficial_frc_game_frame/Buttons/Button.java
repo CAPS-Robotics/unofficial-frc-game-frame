@@ -9,7 +9,6 @@ public class Button {
     public void trigger() {}
     public void draw() {}
     public void checkClick(int cx, int cy) {
-        System.out.println("Button received click at (" + cx + ", " + cy + ")");
         if(cx > x && cy > y && cx < x + 253 && cy < y + 99) {
             trigger();
         }

@@ -10,7 +10,6 @@ public class FRCScreen {
     public void draw() {}
     public Button[] buttons;
     public void clickButtons(int cx, int cy) {
-        System.out.println("Screen received click at (" + cx + ", " + cy + ")");
         for(Button button : buttons) {
             button.checkClick(cx, cy);
         }

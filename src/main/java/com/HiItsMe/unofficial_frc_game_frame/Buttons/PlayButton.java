@@ -10,8 +10,6 @@ import java.io.File;
  * Created by William Herron on 5/20/2017.
  */
 public class PlayButton extends Button {
-    int x;
-    int y;
     BufferedImage img;
     public PlayButton(int X, int Y) {
         x = X;
@@ -23,7 +21,7 @@ public class PlayButton extends Button {
     }
     @Override
     public void trigger() {
-
+        FrameMain.setScreen("Start");
     }
     @Override
     public void draw() {

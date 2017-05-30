@@ -16,9 +16,11 @@ import java.io.*;
  */
 public class Title extends FRCScreen {
     BufferedImage img;
-    Button[] buttons = {new PlayButton((1256/2)-(253/2), (4*(570/7))-(99/2)), new CustomizeButton((1256/2)-(253/2), (4*(570/5))-(99/2))};
     @Override
     public void init() {
+        buttons = new Button[2];
+        buttons[0] = new PlayButton((1256/2)-(253/2), (4*(570/7))-(99/2));
+        buttons[1] = new CustomizeButton((1256/2)-(253/2), (4*(570/5))-(99/2));
         img = null;
         try {
             img = ImageIO.read(new File("./src/main/resources/Images/TitleScreen.png"));

@@ -2,6 +2,7 @@ package com.HiItsMe.unofficial_frc_game_frame;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
+import java.util.Arrays;
 
 /**
  * Created by William Herron on 5/20/2017.
@@ -18,6 +19,7 @@ public class GUI extends Frame {
         setExtendedState(MAXIMIZED_BOTH);
         setUndecorated(true);
         Canvas canvas = new Canvas();
+        canvas.setFocusable(false);
         canvas.setIgnoreRepaint(true);
         canvas.setSize(getWidth(), getHeight());
         add(canvas);
@@ -43,7 +45,7 @@ public class GUI extends Frame {
             }
         });
         addKeyListener(new FRCKeyListener());
-        addMouseListener(new FRCMouseListener());
+        canvas.addMouseListener(new FRCMouseListener());
     }
     public void drw() {
         try {
