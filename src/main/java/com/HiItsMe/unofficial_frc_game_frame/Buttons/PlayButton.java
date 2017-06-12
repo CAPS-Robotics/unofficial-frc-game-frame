@@ -8,6 +8,7 @@ import java.io.File;
 
 /**
  * Created by William Herron on 5/20/2017.
+ * Open to robot select screen
  */
 public class PlayButton extends Button {
     BufferedImage img;

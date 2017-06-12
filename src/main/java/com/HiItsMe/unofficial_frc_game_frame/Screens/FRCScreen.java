@@ -4,6 +4,7 @@ import com.HiItsMe.unofficial_frc_game_frame.Buttons.*;
 
 /**
  * Created by William Herron on 5/20/2017.
+ * The superclass to all Screens
  */
 public class FRCScreen {
     public void init() {}

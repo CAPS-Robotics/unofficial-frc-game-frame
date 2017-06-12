@@ -7,6 +7,7 @@ import java.awt.*;
 
 /**
  * Created by William Herron on 5/20/2017.
+ * Runs everything, stores screens
  */
 public class FrameMain {
     public static String screen = "";

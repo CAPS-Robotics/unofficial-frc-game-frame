@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 /**
  * Created by William Herron on 5/20/2017.
+ * The actual display
  */
 public class GUI extends Frame {
     public Graphics graphics = null;
@@ -13,12 +14,16 @@ public class GUI extends Frame {
     BufferStrategy buffer;
     BufferedImage bi;
     public int[] screenRatio = {1256, 570};
-    public double scaleSize = 1.000000000000000;
+    public double scaleSize = 1;
+    public GraphicsConfiguration gc;
     public GUI() {
+        //Fullscreen and prep for constant redraw
         setIgnoreRepaint(true);
         setExtendedState(MAXIMIZED_BOTH);
         setUndecorated(true);
+        //Set up canvas for drawing
         Canvas canvas = new Canvas();
+        canvas.setBackground(Color.BLACK);
         canvas.setFocusable(false);
         canvas.setIgnoreRepaint(true);
         canvas.setSize(getWidth(), getHeight());
@@ -29,7 +34,8 @@ public class GUI extends Frame {
         buffer = canvas.getBufferStrategy();
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice gd = ge.getDefaultScreenDevice();
-        GraphicsConfiguration gc = gd.getDefaultConfiguration();
+        gc = gd.getDefaultConfiguration();
+        //Set up scaling
         if(getWidth() < getHeight()*screenRatio[0]/screenRatio[1]) {
             scaleSize = (double)getWidth()/screenRatio[0];
         } else {
@@ -38,17 +44,25 @@ public class GUI extends Frame {
         bi = gc.createCompatibleImage((int)(screenRatio[0]*scaleSize), (int)(screenRatio[1]*scaleSize));
 
         //Kill window if closed or esc pressed
-        addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowListener() {
             public void windowClosing(WindowEvent e) {
                 dispose();
                 System.exit(0);
             }
+            public void windowDeiconified(WindowEvent e) {}
+            public void windowIconified(WindowEvent e) {}
+            public void windowClosed(WindowEvent e) {}
+            public void windowOpened(WindowEvent e) {}
+            public void windowDeactivated(WindowEvent e) {}
+            public void windowActivated(WindowEvent e) {}
         });
         addKeyListener(new FRCKeyListener());
+        //Send clicks to respective screen
         canvas.addMouseListener(new FRCMouseListener());
     }
     public void drw() {
         try {
+            //Scale and draw screens then display in frame's center
             g2d = bi.createGraphics();
             g2d.setColor(Color.BLACK);
             g2d.fillRect(0, 0, getWidth()-1, getHeight()-1);
@@ -61,6 +75,7 @@ public class GUI extends Frame {
             }
             Thread.yield();
         } finally {
+            //Dispose of graphics for reuse
             if(graphics != null) {
                 graphics.dispose();
             }
