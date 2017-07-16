@@ -33,12 +33,12 @@ public class Customize extends FRCScreen {
         assets = maxAssets;
         //Initialize buttons
         buttons = new Button[2];
-        buttons[0] = new SaveButton((7*(FrameMain.gui.screenRatio[0]/8))-(253/2), (4*(FrameMain.gui.screenRatio[1]/7))-(99/2));
-        buttons[1] = new CancelButton((7*(FrameMain.gui.screenRatio[0]/8))-(253/2), (4*(FrameMain.gui.screenRatio[1]/5))-(99/2));
-        upgs[0] = new UpgradeSelector(5, (1*(FrameMain.gui.screenRatio[0]/8))-(20/2), (6*(FrameMain.gui.screenRatio[1]/16))-(20/2), 0);
-        upgs[1] = new UpgradeSelector(2, (1*(FrameMain.gui.screenRatio[0]/8))-(20/2), (7*(FrameMain.gui.screenRatio[1]/16))-(20/2), 0);
-        upgs[2] = new UpgradeSelector(3, (1*(FrameMain.gui.screenRatio[0]/8))-(20/2), (8*(FrameMain.gui.screenRatio[1]/16))-(20/2), 1);
-        upgs[3] = new UpgradeSelector(1, (1*(FrameMain.gui.screenRatio[0]/8))-(20/2), (9*(FrameMain.gui.screenRatio[1]/16))-(20/2), 0);
+        buttons[0] = new SaveButton(7*(FrameMain.gui.screenRatio[0]/8), 4*(FrameMain.gui.screenRatio[1]/7));
+        buttons[1] = new CancelButton(7*(FrameMain.gui.screenRatio[0]/8), 4*(FrameMain.gui.screenRatio[1]/5));
+        upgs[0] = new UpgradeSelector(5, 1*(FrameMain.gui.screenRatio[0]/8), 6*(FrameMain.gui.screenRatio[1]/16), 0);
+        upgs[1] = new UpgradeSelector(2, 1*(FrameMain.gui.screenRatio[0]/8), 7*(FrameMain.gui.screenRatio[1]/16), 0);
+        upgs[2] = new UpgradeSelector(3, 1*(FrameMain.gui.screenRatio[0]/8), 8*(FrameMain.gui.screenRatio[1]/16), 1);
+        upgs[3] = new UpgradeSelector(1, 1*(FrameMain.gui.screenRatio[0]/8), 9*(FrameMain.gui.screenRatio[1]/16), 0);
         //Initialize images
         for(int i = 1; i < 4; i++) {
             try {

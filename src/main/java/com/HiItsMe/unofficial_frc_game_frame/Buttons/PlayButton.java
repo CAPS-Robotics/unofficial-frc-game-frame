@@ -26,6 +26,6 @@ public class PlayButton extends Button {
     }
     @Override
     public void draw() {
-        FrameMain.gui.g2d.drawImage(img, x, y, null);
+        FrameMain.gui.drawCenteredImage(img, x, y);
     }
 }

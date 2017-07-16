@@ -12,7 +12,7 @@ import java.io.File;
  * The Screen where you pick the robots you'll play the next game with
  */
 public class Start extends FRCScreen {
-    int gamemode = 0;
+    public int gamemode = 0;
     int pgamemode = 0;
     public int[] robots = {0, 0};
     BufferedImage img;
@@ -20,10 +20,10 @@ public class Start extends FRCScreen {
     @Override
     public void init() {
         buttons = new Button[4];
-        buttons[0] = new AIButton((FrameMain.gui.screenRatio[0]/5)-(253/2), (5*(FrameMain.gui.screenRatio[1]/6))-(99/2));
-        buttons[1] = new PlayerCountButton((2*(FrameMain.gui.screenRatio[0]/5))-(253/2), (5*(FrameMain.gui.screenRatio[1]/6))-(99/2));
-        buttons[2] = new CancelButton((3*(FrameMain.gui.screenRatio[0]/5))-(253/2), (5*(FrameMain.gui.screenRatio[1]/6))-(99/2));
-        buttons[3] = new StartButton((4*(FrameMain.gui.screenRatio[0]/5))-(253/2), (5*(FrameMain.gui.screenRatio[1]/6))-(99/2));
+        buttons[0] = new AIButton(FrameMain.gui.screenRatio[0]/5, 5*(FrameMain.gui.screenRatio[1]/6));
+        buttons[1] = new PlayerCountButton(2*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6));
+        buttons[2] = new CancelButton(3*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6));
+        buttons[3] = new StartButton(4*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6));
         try {
             img = ImageIO.read(new File("./src/main/resources/Images/StartScreen.png"));
         } catch (Exception e) { e.printStackTrace(); }
@@ -73,8 +73,8 @@ public class Start extends FRCScreen {
                 for(int i = 0; i < robots.length; i++) {
                     robots[i] = 0;
                 }
-                robotSelectors[0] = new RobotSelector((FrameMain.gui.screenRatio[0]/4)-50, (FrameMain.gui.screenRatio[1]/3)-25, 0, 1);
-                robotSelectors[1] = new RobotSelector((3*(FrameMain.gui.screenRatio[0]/4))-50, (FrameMain.gui.screenRatio[1]/3)-25, 1, 0);
+                robotSelectors[0] = new RobotSelector(FrameMain.gui.screenRatio[0]/4, FrameMain.gui.screenRatio[1]/3, 0, 1);
+                robotSelectors[1] = new RobotSelector(3*(FrameMain.gui.screenRatio[0]/4), FrameMain.gui.screenRatio[1]/3, 1, 0);
                 break;
             case 1:
                 robotSelectors = new RobotSelector[2];
@@ -82,8 +82,8 @@ public class Start extends FRCScreen {
                 for(int i = 0; i < robots.length; i++) {
                     robots[i] = 0;
                 }
-                robotSelectors[0] = new RobotSelector((FrameMain.gui.screenRatio[0]/4)-50, (FrameMain.gui.screenRatio[1]/3)-25, 0, 1);
-                robotSelectors[1] = new RobotSelector((3*(FrameMain.gui.screenRatio[0]/4))-50, (FrameMain.gui.screenRatio[1]/3)-25, 1, 2);
+                robotSelectors[0] = new RobotSelector(FrameMain.gui.screenRatio[0]/4, FrameMain.gui.screenRatio[1]/3, 0, 1);
+                robotSelectors[1] = new RobotSelector(3*(FrameMain.gui.screenRatio[0]/4), FrameMain.gui.screenRatio[1]/3, 1, 2);
                 break;
             case 2:
                 robotSelectors = new RobotSelector[6];
@@ -91,12 +91,12 @@ public class Start extends FRCScreen {
                 for(int i = 0; i < robots.length; i++) {
                     robots[i] = 0;
                 }
-                robotSelectors[0] = new RobotSelector((FrameMain.gui.screenRatio[0]/6)-50, (FrameMain.gui.screenRatio[1]/4)-25, 0, 1);
-                robotSelectors[1] = new RobotSelector((2*(FrameMain.gui.screenRatio[0]/6))-50, (FrameMain.gui.screenRatio[1]/4)-25, 1, 1);
-                robotSelectors[2] = new RobotSelector((FrameMain.gui.screenRatio[0]/4)-50, (2*(FrameMain.gui.screenRatio[1]/4))-25, 2, 1);
-                robotSelectors[3] = new RobotSelector((4*(FrameMain.gui.screenRatio[0]/6))-50, (FrameMain.gui.screenRatio[1]/4)-25, 3, 0);
-                robotSelectors[4] = new RobotSelector((5*(FrameMain.gui.screenRatio[0]/6))-50, (FrameMain.gui.screenRatio[1]/4)-25, 4, 0);
-                robotSelectors[5] = new RobotSelector((3*(FrameMain.gui.screenRatio[0]/4))-50, (2*(FrameMain.gui.screenRatio[1]/4))-25, 5, 0);
+                robotSelectors[0] = new RobotSelector(FrameMain.gui.screenRatio[0]/6, FrameMain.gui.screenRatio[1]/4, 0, 1);
+                robotSelectors[1] = new RobotSelector(2*(FrameMain.gui.screenRatio[0]/6), FrameMain.gui.screenRatio[1]/4, 1, 1);
+                robotSelectors[2] = new RobotSelector(FrameMain.gui.screenRatio[0]/4, 2*(FrameMain.gui.screenRatio[1]/4), 2, 1);
+                robotSelectors[3] = new RobotSelector(4*(FrameMain.gui.screenRatio[0]/6), FrameMain.gui.screenRatio[1]/4, 3, 0);
+                robotSelectors[4] = new RobotSelector(5*(FrameMain.gui.screenRatio[0]/6), FrameMain.gui.screenRatio[1]/4, 4, 0);
+                robotSelectors[5] = new RobotSelector(3*(FrameMain.gui.screenRatio[0]/4), 2*(FrameMain.gui.screenRatio[1]/4), 5, 0);
                 break;
             case 3:
                 robots = new int[6];
@@ -104,12 +104,12 @@ public class Start extends FRCScreen {
                     robots[i] = 0;
                 }
                 robotSelectors = new RobotSelector[6];
-                robotSelectors[0] = new RobotSelector((FrameMain.gui.screenRatio[0]/6)-50, (FrameMain.gui.screenRatio[1]/4)-25, 0, 1);
-                robotSelectors[1] = new RobotSelector((2*(FrameMain.gui.screenRatio[0]/6))-50, (FrameMain.gui.screenRatio[1]/4)-25, 1, 1);
-                robotSelectors[2] = new RobotSelector((FrameMain.gui.screenRatio[0]/4)-50, (2*(FrameMain.gui.screenRatio[1]/4))-25, 2, 1);
-                robotSelectors[3] = new RobotSelector((4*(FrameMain.gui.screenRatio[0]/6))-50, (FrameMain.gui.screenRatio[1]/4)-25, 3, 2);
-                robotSelectors[4] = new RobotSelector((5*(FrameMain.gui.screenRatio[0]/6))-50, (FrameMain.gui.screenRatio[1]/4)-25, 4, 2);
-                robotSelectors[5] = new RobotSelector((3*(FrameMain.gui.screenRatio[0]/4))-50, (2*(FrameMain.gui.screenRatio[1]/4))-25, 5, 2);
+                robotSelectors[0] = new RobotSelector(FrameMain.gui.screenRatio[0]/6, FrameMain.gui.screenRatio[1]/4, 0, 1);
+                robotSelectors[1] = new RobotSelector(2*(FrameMain.gui.screenRatio[0]/6), FrameMain.gui.screenRatio[1]/4, 1, 1);
+                robotSelectors[2] = new RobotSelector(FrameMain.gui.screenRatio[0]/4, 2*(FrameMain.gui.screenRatio[1]/4), 2, 1);
+                robotSelectors[3] = new RobotSelector(4*(FrameMain.gui.screenRatio[0]/6), FrameMain.gui.screenRatio[1]/4, 3, 2);
+                robotSelectors[4] = new RobotSelector(5*(FrameMain.gui.screenRatio[0]/6), FrameMain.gui.screenRatio[1]/4, 4, 2);
+                robotSelectors[5] = new RobotSelector(3*(FrameMain.gui.screenRatio[0]/4), 2*(FrameMain.gui.screenRatio[1]/4), 5, 2);
                 break;
         }
     }

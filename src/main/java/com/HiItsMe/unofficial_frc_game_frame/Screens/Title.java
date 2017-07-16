@@ -21,8 +21,8 @@ public class Title extends FRCScreen {
     public void init() {
         //Initialize buttons
         buttons = new Button[2];
-        buttons[0] = new PlayButton((FrameMain.gui.screenRatio[0]/2)-(253/2), (4*(FrameMain.gui.screenRatio[1]/7))-(99/2));
-        buttons[1] = new CustomizeButton((FrameMain.gui.screenRatio[0]/2)-(253/2), (4*(FrameMain.gui.screenRatio[1]/5))-(99/2));
+        buttons[0] = new PlayButton(FrameMain.gui.screenRatio[0]/2, 4*(FrameMain.gui.screenRatio[1]/7));
+        buttons[1] = new CustomizeButton(FrameMain.gui.screenRatio[0]/2, 4*(FrameMain.gui.screenRatio[1]/5));
         //Initialize bg
         img = null;
         try {

@@ -30,9 +30,9 @@ public class PlayerCountButton extends Button {
     @Override
     public void draw() {
         if(three) {
-            FrameMain.gui.g2d.drawImage(imgs[0], x, y, null);
+            FrameMain.gui.drawCenteredImage(imgs[0], x, y);
         } else {
-            FrameMain.gui.g2d.drawImage(imgs[1], x, y, null);
+            FrameMain.gui.drawCenteredImage(imgs[1], x, y);
         }
     }
 }

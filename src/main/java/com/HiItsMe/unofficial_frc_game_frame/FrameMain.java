@@ -37,6 +37,7 @@ public class FrameMain {
         screens.put("Game", new Game());
         screens.put("Pause", new Pause());
         screens.put("End", new End());
+        screens.put("PlayerSelect", new PlayerSelect());
         setScreen("Title");
         while(true) {
             gui.drw();
@@ -44,7 +45,7 @@ public class FrameMain {
     }
 
     public static void setScreen(String newScreen) {
-        screen = newScreen;
         screens.get(newScreen).init();
+        screen = newScreen;
     }
 }

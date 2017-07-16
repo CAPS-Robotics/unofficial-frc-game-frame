@@ -23,7 +23,7 @@ public class RobotSelector {
         //get number of robots
         robots = 0;
         for(File robotFile : robotFiles) {
-            if(robotFile.getName().matches("Robot.\\.png")) {
+            if(robotFile.getName().matches("Robot\\d+\\.png")) {
                 robots++;
             }
         }
@@ -45,11 +45,11 @@ public class RobotSelector {
         }
     }
     public void draw() {
-        FrameMain.gui.g2d.drawImage(arrows[_color], _x, _y, null);
-        FrameMain.gui.g2d.drawImage(robotImgs[robot], _x + 25, _y, null);
+        FrameMain.gui.drawCenteredImage(arrows[_color], _x, _y);
+        FrameMain.gui.drawCenteredImage(robotImgs[robot], _x, _y);
     }
     public void checkClick(int cx, int cy) {
-        if(cx > _x && cx < _x + 25 && cy > _y && cy < _y + 50) {
+        if(cx > _x - 50 && cx < _x - 25 && cy > _y - 25 && cy < _y + 25) {
             if(robot == 0) {
                 robot = robots - 1;
             } else {
@@ -57,7 +57,7 @@ public class RobotSelector {
             }
             Start scr = (Start)(FrameMain.screens.get(FrameMain.screen));
             scr.robots[_selectorNum] = robot;
-        } else if(cx > _x + 75 && cx < _x + 100 && cy > _y && cy < _y + 50) {
+        } else if(cx > _x + 25 && cx < _x + 50 && cy > _y - 25 && cy < _y + 25) {
             if(robot == robots - 1) {
                 robot = 0;
             } else {

@@ -65,5 +65,5 @@ public class SaveButton extends Button {
         FrameMain.setScreen("Title");
     }
     @Override
-    public void draw() { FrameMain.gui.g2d.drawImage(img, x, y, null); }
+    public void draw() { FrameMain.gui.drawCenteredImage(img, x, y); }
 }

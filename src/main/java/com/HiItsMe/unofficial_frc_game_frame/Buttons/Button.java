@@ -10,7 +10,7 @@ public class Button {
     public void trigger() {}
     public void draw() {}
     public void checkClick(int cx, int cy) {
-        if(cx > x && cy > y && cx < x + 253 && cy < y + 99) {
+        if(cx > x - 253/2 && cy > y - 99/2 && cx < x + 253/2 && cy < y + 99/2) {
             trigger();
         }
     }

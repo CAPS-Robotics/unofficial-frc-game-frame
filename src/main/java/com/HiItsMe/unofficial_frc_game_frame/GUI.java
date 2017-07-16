@@ -84,4 +84,15 @@ public class GUI extends Frame {
             }
         }
     }
+    public void drawCenteredText(Font font, String text, int x, int y) {
+        g2d.setFont(font);
+        x -= g2d.getFontMetrics(font).stringWidth(text)/2;
+        y -= (g2d.getFontMetrics(font).getHeight()*(text.split("\\n").length))/2;
+        g2d.drawString(text, x, y);
+    }
+    public void drawCenteredImage(BufferedImage image, int x, int y) {
+        x -= image.getWidth()/2;
+        y -= image.getHeight()/2;
+        g2d.drawImage(image, x, y, null);
+    }
 }

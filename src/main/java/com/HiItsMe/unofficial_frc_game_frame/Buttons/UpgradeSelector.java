@@ -27,17 +27,17 @@ public class UpgradeSelector {
     public void draw() {
         for(int i = 0; i < _tiers; i++) {
             if(i < _def) {
-                FrameMain.gui.g2d.drawImage(imgs[2], _x + (i * 25), _y, null);
+                FrameMain.gui.drawCenteredImage(imgs[2], _x + (i * 25), _y);
             } else if(i < tier) {
-                FrameMain.gui.g2d.drawImage(imgs[1], _x + (i * 25), _y, null);
+                FrameMain.gui.drawCenteredImage(imgs[1], _x + (i * 25), _y);
             } else {
-                FrameMain.gui.g2d.drawImage(imgs[0], _x + (i * 25), _y, null);
+                FrameMain.gui.drawCenteredImage(imgs[0], _x + (i * 25), _y);
             }
         }
     }
     public void checkClick(int cx, int cy) {
         for(int i = _def; i < _tiers; i++) {
-            if(cx > _x + (i * 25) && cx < _x + (i * 25) + 20 && cy > _y && cy < _y + 20) {
+            if(cx > _x + (i * 25) - 10 && cx < _x + (i * 25) + 10 && cy > _y - 10 && cy < _y + 10) {
                 int ptier = tier;
                 if(tier == i + 1) {
                     tier = i;
