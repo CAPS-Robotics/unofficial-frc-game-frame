@@ -15,4 +15,6 @@ public class FRCScreen {
             button.checkClick(cx, cy);
         }
     }
+    public void keyDown(int key) {}
+    public void keyUp(int key) {}
 }

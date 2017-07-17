@@ -1,4 +1,6 @@
-package com.HiItsMe.unofficial_frc_game_frame;
+package com.HiItsMe.unofficial_frc_game_frame.EventListeners;
+
+import com.HiItsMe.unofficial_frc_game_frame.FrameMain;
 
 import java.awt.event.*;
 

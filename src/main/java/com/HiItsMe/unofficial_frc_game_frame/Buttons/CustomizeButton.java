@@ -15,7 +15,6 @@ public class CustomizeButton extends Button {
     public CustomizeButton(int X, int Y) {
         x = X;
         y = Y;
-        img = null;
         try {
             img = ImageIO.read(new File("./src/main/resources/Images/CustomizeButton.png"));
         } catch (Exception e) { e.printStackTrace(); }
