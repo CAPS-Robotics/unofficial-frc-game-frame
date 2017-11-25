@@ -23,6 +23,7 @@ public class StartButton extends Button {
     }
     @Override
     public void trigger() {
+        //Set the number of players for the
         PlayerSelect playerSelect = (PlayerSelect)FrameMain.screens.get("PlayerSelect");
         Start startScreen = (Start)FrameMain.screens.get("Start");
         switch(startScreen.gamemode) {
@@ -38,7 +39,11 @@ public class StartButton extends Button {
             case 3:
                 playerSelect.playerNum = 6;
         }
-        FrameMain.setScreen("PlayerSelect");
+        if(playerSelect.playerNum == 6) {
+            FrameMain.setScreen("Connect");
+        } else {
+            FrameMain.setScreen("PlayerSelect");
+        }
     }
     @Override
     public void draw() {

@@ -1,6 +1,6 @@
 package com.HiItsMe.unofficial_frc_game_frame.Screens;
 
-import com.HiItsMe.unofficial_frc_game_frame.Buttons.*;
+import com.HiItsMe.unofficial_frc_game_frame.Buttons.Button;
 
 /**
  * Created by William Herron on 5/20/2017.
@@ -17,4 +17,5 @@ public class FRCScreen {
     }
     public void keyDown(int key) {}
     public void keyUp(int key) {}
+    public void incomingData(Object data) {}
 }

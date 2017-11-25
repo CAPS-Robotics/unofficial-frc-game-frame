@@ -22,7 +22,7 @@ public class Start extends FRCScreen {
         buttons = new Button[4];
         buttons[0] = new AIButton(FrameMain.gui.screenRatio[0]/5, 5*(FrameMain.gui.screenRatio[1]/6));
         buttons[1] = new PlayerCountButton(2*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6));
-        buttons[2] = new CancelButton(3*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6));
+        buttons[2] = new ScreenswapButton(3*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6), "Cancel", "Title");
         buttons[3] = new StartButton(4*(FrameMain.gui.screenRatio[0]/5), 5*(FrameMain.gui.screenRatio[1]/6));
         try {
             img = ImageIO.read(new File("./src/main/resources/Images/StartScreen.png"));

@@ -5,12 +5,14 @@ package com.HiItsMe.unofficial_frc_game_frame.Buttons;
  * Superclass to all Buttons
  */
 public class Button {
+    public int bwidth = 253;
+    public int bheight = 99;
     public int x;
     public int y;
     public void trigger() {}
     public void draw() {}
     public void checkClick(int cx, int cy) {
-        if(cx > x - 253/2 && cy > y - 99/2 && cx < x + 253/2 && cy < y + 99/2) {
+        if(cx > x - bwidth/2 && cy > y - bheight/2 && cx < x + bwidth/2 && cy < y + bheight/2) {
             trigger();
         }
     }

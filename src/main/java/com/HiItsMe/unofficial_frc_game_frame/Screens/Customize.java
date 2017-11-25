@@ -1,12 +1,14 @@
 package com.HiItsMe.unofficial_frc_game_frame.Screens;
 
-import com.HiItsMe.unofficial_frc_game_frame.Buttons.*;
 import com.HiItsMe.unofficial_frc_game_frame.Buttons.Button;
+import com.HiItsMe.unofficial_frc_game_frame.Buttons.SaveButton;
+import com.HiItsMe.unofficial_frc_game_frame.Buttons.ScreenswapButton;
+import com.HiItsMe.unofficial_frc_game_frame.Buttons.UpgradeSelector;
 import com.HiItsMe.unofficial_frc_game_frame.FrameMain;
 
 import javax.imageio.ImageIO;
-import java.awt.image.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 
 /**
@@ -25,7 +27,7 @@ public class Customize extends FRCScreen {
     Font titleFont = new Font("Serif", Font.PLAIN, 72);
     Font lineMarkerFont = new Font("Monospaced", Font.PLAIN, 16);
     Font assetsFont = new Font("Serif", Font.BOLD, 24);
-    Font detailFont = new Font("Monospaced", Font.PLAIN, 7);
+    Font detailFont = new Font("Monospaced", Font.PLAIN, 6);
     BufferedImage robot;
     Graphics2D robotGraphics;
     @Override
@@ -34,7 +36,7 @@ public class Customize extends FRCScreen {
         //Initialize buttons
         buttons = new Button[2];
         buttons[0] = new SaveButton(7*(FrameMain.gui.screenRatio[0]/8), 4*(FrameMain.gui.screenRatio[1]/7));
-        buttons[1] = new CancelButton(7*(FrameMain.gui.screenRatio[0]/8), 4*(FrameMain.gui.screenRatio[1]/5));
+        buttons[1] = new ScreenswapButton(7*(FrameMain.gui.screenRatio[0]/8), 4*(FrameMain.gui.screenRatio[1]/5), "Cancel", "Title");
         upgs[0] = new UpgradeSelector(5, 1*(FrameMain.gui.screenRatio[0]/8), 6*(FrameMain.gui.screenRatio[1]/16), 0);
         upgs[1] = new UpgradeSelector(2, 1*(FrameMain.gui.screenRatio[0]/8), 7*(FrameMain.gui.screenRatio[1]/16), 0);
         upgs[2] = new UpgradeSelector(3, 1*(FrameMain.gui.screenRatio[0]/8), 8*(FrameMain.gui.screenRatio[1]/16), 1);
@@ -79,10 +81,9 @@ public class Customize extends FRCScreen {
         FrameMain.gui.g2d.drawString("SHOOTER", FrameMain.gui.screenRatio[0] / 32, (7 * (FrameMain.gui.screenRatio[1] / 16)) + 6);
         FrameMain.gui.g2d.drawString("DRIVETRAIN", FrameMain.gui.screenRatio[0] / 32, (8 * (FrameMain.gui.screenRatio[1] / 16)) + 6);
         FrameMain.gui.g2d.drawString("AUTONOMOUS", FrameMain.gui.screenRatio[0] / 32, (9 * (FrameMain.gui.screenRatio[1] / 16)) + 6);
-        FrameMain.gui.g2d.setFont(detailFont);
-        FrameMain.gui.g2d.drawString("TANK", (FrameMain.gui.screenRatio[0]/8)-8, (8 * (FrameMain.gui.screenRatio[1] / 16))+15);
-        FrameMain.gui.g2d.drawString("ARCADE", (FrameMain.gui.screenRatio[0]/8)-12+(25), (8 * (FrameMain.gui.screenRatio[1] / 16))+15);
-        FrameMain.gui.g2d.drawString("SWERVE", (FrameMain.gui.screenRatio[0]/8)-12+(25*2), (8 * (FrameMain.gui.screenRatio[1] / 16))+15);
+        FrameMain.gui.drawCenteredText(detailFont, "TANK", FrameMain.gui.screenRatio[0]/8-1, (8 * (FrameMain.gui.screenRatio[1] / 16))+22);
+        FrameMain.gui.drawCenteredText(detailFont, "ARCADE", FrameMain.gui.screenRatio[0]/8+24, (8 * (FrameMain.gui.screenRatio[1] / 16))+22);
+        FrameMain.gui.drawCenteredText(detailFont, "SWERVE", FrameMain.gui.screenRatio[0]/8+49, (8 * (FrameMain.gui.screenRatio[1] / 16))+22);
         FrameMain.gui.g2d.setFont(assetsFont);
         FrameMain.gui.g2d.drawString("Assets: " + (maxAssets - assets) + "/" + maxAssets, 2 * (FrameMain.gui.screenRatio[0] / 3), 72);
         try {

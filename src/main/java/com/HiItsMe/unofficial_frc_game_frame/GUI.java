@@ -1,9 +1,15 @@
 package com.HiItsMe.unofficial_frc_game_frame;
-import com.HiItsMe.unofficial_frc_game_frame.EventListeners.*;
+
+import com.HiItsMe.unofficial_frc_game_frame.EventListeners.FRCKeyListener;
+import com.HiItsMe.unofficial_frc_game_frame.EventListeners.FRCMouseListener;
 
 import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.HashMap;
 
 /**
  * Created by William Herron on 5/20/2017.
@@ -17,6 +23,7 @@ public class GUI extends Frame {
     public int[] screenRatio = {1256, 570};
     public double scaleSize = 1;
     public GraphicsConfiguration gc;
+    public HashMap<String, Font> fonts = new HashMap<>();
     public GUI() {
         //Fullscreen and prep for constant redraw
         setIgnoreRepaint(true);
@@ -34,6 +41,7 @@ public class GUI extends Frame {
         canvas.createBufferStrategy(2);
         buffer = canvas.getBufferStrategy();
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        //Init fonts
         GraphicsDevice gd = ge.getDefaultScreenDevice();
         gc = gd.getDefaultConfiguration();
         //Set up scaling
@@ -95,5 +103,19 @@ public class GUI extends Frame {
         x -= image.getWidth()/2;
         y -= image.getHeight()/2;
         g2d.drawImage(image, x, y, null);
+    }
+    private void registerFont(GraphicsEnvironment graphicsEnvironment, String fontName, String backupFont) {
+        Font font;
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, new File("./src/main/resources/Fonts/" + fontName + ".ttf"));
+            graphicsEnvironment.registerFont(font);
+        } catch (Exception e) {
+            e.printStackTrace();
+            font = new Font(backupFont, Font.PLAIN, 1);
+        }
+        fonts.put(fontName, font);
+    }
+    public Font font(String fontName, int fontStyle, int fontSize) {
+        return fonts.get(fontName).deriveFont(fontStyle, fontSize);
     }
 }

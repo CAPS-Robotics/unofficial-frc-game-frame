@@ -1,14 +1,12 @@
 package com.HiItsMe.unofficial_frc_game_frame.Screens;
 
 import com.HiItsMe.unofficial_frc_game_frame.Buttons.Button;
-import com.HiItsMe.unofficial_frc_game_frame.Buttons.StartButton;
+import com.HiItsMe.unofficial_frc_game_frame.Buttons.ScreenswapButton;
 import com.HiItsMe.unofficial_frc_game_frame.FrameMain;
-import com.HiItsMe.unofficial_frc_game_frame.Buttons.*;
 
-import javax.imageio.*;
-import java.awt.*;
-import java.awt.image.*;
-import java.io.*;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 
 /**
@@ -21,8 +19,8 @@ public class Title extends FRCScreen {
     public void init() {
         //Initialize buttons
         buttons = new Button[2];
-        buttons[0] = new PlayButton(FrameMain.gui.screenRatio[0]/2, 4*(FrameMain.gui.screenRatio[1]/7));
-        buttons[1] = new CustomizeButton(FrameMain.gui.screenRatio[0]/2, 4*(FrameMain.gui.screenRatio[1]/5));
+        buttons[0] = new ScreenswapButton(FrameMain.gui.screenRatio[0]/2, 4*(FrameMain.gui.screenRatio[1]/7), "Play", "Start");
+        buttons[1] = new ScreenswapButton(FrameMain.gui.screenRatio[0]/2, 4*(FrameMain.gui.screenRatio[1]/5), "Customize", "Customize");
         //Initialize bg
         img = null;
         try {

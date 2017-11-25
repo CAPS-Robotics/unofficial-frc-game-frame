@@ -1,14 +1,18 @@
 package com.HiItsMe.unofficial_frc_game_frame.Buttons;
 
 import com.HiItsMe.unofficial_frc_game_frame.FrameMain;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
-import org.w3c.dom.*;
 import javax.imageio.ImageIO;
-import javax.xml.*;
-import javax.xml.transform.*;
-import javax.xml.parsers.*;
-import javax.xml.transform.dom.*;
-import javax.xml.transform.stream.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -32,7 +36,7 @@ public class SaveButton extends Button {
     }
     @Override
     public void trigger() {
-        //Save XML properties
+        //Save XML properties 
         int robotNum = 0;
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();

@@ -3,7 +3,6 @@ import com.HiItsMe.unofficial_frc_game_frame.Screens.*;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.awt.*;
 
 /**
  * Created by William Herron on 5/20/2017.
@@ -25,7 +24,7 @@ import java.awt.*;
  */
 public class FrameMain {
     public static String screen = "";
-    public static Map<String, FRCScreen> screens = new HashMap<String, FRCScreen>();
+    public static Map<String, FRCScreen> screens = new HashMap<>();
 
     public static GUI gui;
 
@@ -38,6 +37,7 @@ public class FrameMain {
         screens.put("Pause", new Pause());
         screens.put("End", new End());
         screens.put("PlayerSelect", new PlayerSelect());
+        screens.put("Connect", new Connect());
         setScreen("Title");
         while(true) {
             gui.drw();
